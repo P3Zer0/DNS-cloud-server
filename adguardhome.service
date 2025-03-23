@@ -1,0 +1,14 @@
+[Unit]
+Description=AdGuard Home via Docker Compose
+Requires=docker.service
+After=docker.service
+
+[Service]
+WorkingDirectory=/opt/adguardhome
+ExecStart=/usr/local/bin/docker-compose -f adguardhome.Dockefile up
+ExecStop=/usr/local/bin/docker-compose -f adguardhome.Dockefile down
+Restart=always
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
