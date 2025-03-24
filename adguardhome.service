@@ -1,5 +1,5 @@
 [Unit]
-Description=AdGuard Home via Docker Compose
+Description=AdGuardHome via Docker Compose
 Requires=docker.service
 After=docker.service
 
