@@ -12,11 +12,12 @@
 # adguardhome.Dockefile
 services:
   adguardhome:
-    image: adguard/adguardhome
+    image: adguard/adguardhome:v0.107.57
     restart: unless-stopped
     volumes:
       - /opt/adguardhome/work:/opt/adguardhome/work
       - /opt/adguardhome/conf:/opt/adguardhome/conf
+      - /opt/lego/:/opt/lego
     ports:
       - "53:53/tcp"
       - "53:53/udp"
