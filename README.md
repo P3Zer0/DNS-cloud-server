@@ -173,7 +173,7 @@ sudo DOMAIN_NAME="<your_domain>" \
 
 
 #### Użycie `Lego` bezpośrednio
-Szczegółowe instrukcje znajdują się [tutaj](https://go-acme.github.io/lego/dns/index.html).
+Szczegółowe instrukcje znajdują się [tutaj](https://go-acme.github.io/lego/).
 
 #### Włączenie szyfrowania w `AdGuardHome` (Https, DoH, DoT, DoQ)
 
