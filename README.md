@@ -87,6 +87,7 @@ sudo systemctl enable --now adguardhome
 sudo nano /etc/systemd/system/adguardhome.service
 ```
 ```ini
+# adguardhome.service
 [Unit]
 Description=AdGuardHome via Docker Compose
 Requires=docker.service
