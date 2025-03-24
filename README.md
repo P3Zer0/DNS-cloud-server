@@ -111,6 +111,8 @@ sudo systemctl enable --now adguardhome
 ## Początkowa konfiguracja DNS
 Należy wejść na `<server_ip>:3000` w przeglądarkce i wykonać podstawową konfigurację.
 
+Później do kongiguracji używane będa porty `80` i `443`.
+
 ## Konfiguracja DNSa według uznania
 
 ### Ad listy
