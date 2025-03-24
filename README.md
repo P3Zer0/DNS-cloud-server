@@ -5,7 +5,7 @@
 ![image](https://github.com/user-attachments/assets/8175ce4a-b02b-44eb-9c51-53dfcba81b32)
 ![image](https://github.com/user-attachments/assets/dd07fcd4-832e-4926-b7fa-c322056b4252)
 
-Najlepiej skorzystać z usługi elastic IP, aby adres był statyczny
+Najlepiej skorzystać z usługi elastic IP, aby adres był statyczny.
 
 ![image](https://github.com/user-attachments/assets/f31069d9-ab62-4056-ae7a-4d20f7e8f5df)
 
@@ -136,10 +136,10 @@ Później do kongiguracji używane będa porty `80` i `443`.
 
 ## [Dodatkowe] Podpięcie do domeny, Certyfikaty, DoH, DoT, DoQ
 ### Rejestracja domeny
-Można to zrobić w wielu różnych serwisach, tutaj jako przykład będzie używany `GoDaddy.com`
+Można to zrobić w wielu różnych serwisach, tutaj jako przykład będzie używany `GoDaddy.com`.
 ![Screenshot_20250324_190051](https://github.com/user-attachments/assets/13222c0f-cdcf-4d16-86f3-b41a045e583a)
 
-Następnie na stronie rejestratora naszej domeny należyt dodać dwa wpisy `A` do DNS - `@` oraz `*`, wskazujące na adres IP naszego serwera
+Następnie na stronie rejestratora naszej domeny należyt dodać dwa wpisy `A` do DNS - `@` oraz `*`, wskazujące na adres IP naszego serwera.
 ![Screenshot_20250324_190143](https://github.com/user-attachments/assets/820971b3-a5bc-4167-997e-5d70acaabb96)
 
 ### Generowanie certyfikatów TLS przy pomocy [`Let's Encrypt`](https://letsencrypt.org/) oraz [`Lego`](https://go-acme.github.io/lego/)
@@ -152,7 +152,7 @@ Dla `GoDaddy` - https://developer.godaddy.com/keys
 ![Screenshot_20250324_192106](https://github.com/user-attachments/assets/a756947a-49b0-4480-a9c6-a011a0c16b1c)
 
 #### Użycie skryptu od twórców `AdGuardHome`
-Szczegółowe instrukcje znajdują się [tutaj](https://github.com/ameshkov/legoagh)
+Szczegółowe instrukcje znajdują się [tutaj](https://github.com/ameshkov/legoagh).
 
 Dla `GoDaddy`
 ```bash
@@ -173,7 +173,7 @@ sudo DOMAIN_NAME="<your_domain>" \
 
 
 #### Użycie `Lego` bezpośrednio
-Szczegółowe instrukcje znajdują się [tutaj](https://go-acme.github.io/lego/dns/index.html)
+Szczegółowe instrukcje znajdują się [tutaj](https://go-acme.github.io/lego/dns/index.html).
 
 #### Włączenie szyfrowania w `AdGuardHome` (Https, DoH, DoT, DoQ)
 
