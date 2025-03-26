@@ -43,7 +43,7 @@ sudo usermod -a -G docker ec2-user
 ### TL;DR
 ```shell
 sudo mkdir -p /opt/adguardhome
-sudo curl -s "https://raw.githubusercontent.com/P3Zer0/DNS-cloud-server/main/adguardhome.Dockefile" --output /opt/adguardhome/adguardhome.Dockerfile
+sudo curl -s "https://raw.githubusercontent.com/P3Zer0/DNS-cloud-server/main/adguardhome.Dockerfile" --output /opt/adguardhome/adguardhome.Dockerfile
 ```
 ### Dłuższa wersja
 ```bash
