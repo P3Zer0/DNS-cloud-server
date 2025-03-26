@@ -95,8 +95,8 @@ After=docker.service
 
 [Service]
 WorkingDirectory=/opt/adguardhome
-ExecStart=/usr/local/bin/docker-compose -f adguardhome.Dockefile up
-ExecStop=/usr/local/bin/docker-compose -f adguardhome.Dockefile down
+ExecStart=/usr/local/bin/docker-compose -f adguardhome.Dockerfile up
+ExecStop=/usr/local/bin/docker-compose -f adguardhome.Dockerfile down
 Restart=always
 TimeoutStartSec=0
 
