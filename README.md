@@ -26,7 +26,7 @@ Porty dla obu `TCP` i `UDP`, chyba że napisano inaczej.
 (Na AWS można wkleić w User data podczas tworzenia instancji)
 ### Amazon Linux 2023
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 
 sudo yum update -y
 sudo yum install -y docker
@@ -39,12 +39,61 @@ sudo systemctl enable --now docker
 sudo usermod -a -G docker ec2-user
 ```
 ### Debian
-`TODO`
+```bash
+#!/usr/bin/env bash
+
+sudo apt-get update
+sudo apt-get upgrade -y
+
+# Add Docker's official GPG key:
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+# Install Docker and Compose plugin
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Install Docker-Compose standalone
+sudo curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose version
+
+sudo systemctl enable --now docker
+sudo usermod -a -G docker admin
+```
+
+## Zwalnianie portu 53
+Sprawdź, czy port 53 jest już zajęty przez jakąś usługę
+```bash
+ss -tulnp
+```
+Jeśli tak to zwolnij go
+```bash
+sudo systemctl disable --now systemd-resolved
+```
+
+## SSH do maszyn
+### Amazon Linux 2023
+```shell
+ssh ec2-user@<ip_addr> -i <key>.pem
+```
+### Debian
+```shell
+ssh admin@<ip_addr> -i <key>.pem
+```
 
 ## AdGuardHome - DNS
 ### TL;DR
 ```shell
-sudo mkdir -p /opt/adguardhome
+sudo mkdir -p /opt/adguardhome &&
 sudo curl -s "https://raw.githubusercontent.com/P3Zer0/DNS-cloud-server/main/adguardhome.Dockerfile" --output /opt/adguardhome/adguardhome.Dockerfile
 ```
 ### Dłuższa wersja
@@ -80,8 +129,8 @@ services:
 ## `adguardhome.service`
 ### TL;DR
 ```shell
-sudo curl -s "https://raw.githubusercontent.com/P3Zer0/DNS-cloud-server/main/adguardhome.service" --output /etc/systemd/system/adguardhome.service
-sudo systemctl daemon-reload
+sudo curl -s "https://raw.githubusercontent.com/P3Zer0/DNS-cloud-server/main/adguardhome.service" --output /etc/systemd/system/adguardhome.service &&
+sudo systemctl daemon-reload &&
 sudo systemctl enable --now adguardhome
 ```
 ### Dłuższa wersja
