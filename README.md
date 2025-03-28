@@ -26,6 +26,8 @@ Porty dla obu `TCP` i `UDP`, chyba że napisano inaczej.
 (Na AWS można wkleić w User data podczas tworzenia instancji)
 ### Amazon Linux 2023
 ```bash
+#!/bin/bash
+
 sudo yum update -y
 sudo yum install -y docker
 
