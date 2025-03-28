@@ -1,6 +1,6 @@
 services:
   adguardhome:
-    image: adguard/adguardhome:v0.107.57
+    image: adguard/adguardhome:v0.107.59
     restart: unless-stopped
     volumes:
       - /opt/adguardhome/work:/opt/adguardhome/work
