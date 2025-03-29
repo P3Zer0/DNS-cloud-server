@@ -70,16 +70,6 @@ sudo systemctl enable --now docker
 sudo usermod -a -G docker admin
 ```
 
-## Zwalnianie portu 53
-Sprawdź, czy port 53 jest już zajęty przez jakąś usługę
-```bash
-ss -tulnp
-```
-Jeśli tak to zwolnij go
-```bash
-sudo systemctl disable --now systemd-resolved
-```
-
 ## SSH do maszyn
 ### Amazon Linux 2023
 ```shell
@@ -157,6 +147,17 @@ WantedBy=multi-user.target
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now adguardhome
+```
+
+## Zwalnianie portu 53
+Sprawdź, czy port 53 jest już zajęty przez jakąś usługę
+```bash
+ss -tulnp
+```
+Jeśli tak to zwolnij go i ponownie uruchom adguardhome
+```bash
+sudo systemctl disable --now systemd-resolved &&
+sudo systemctl start adguardhome
 ```
 
 ## Początkowa konfiguracja DNS
