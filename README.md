@@ -15,7 +15,7 @@ Porty dla obu `TCP` i `UDP`, chyba że napisano inaczej.
 
 - `3000` - port do początkowej konfiguracji serwera
 - `53` - nieszyfrowany DNS
-- `67`, `68` - HDCP, w naszym przypadku nie potrzebne
+- `67`, `68` - DHCP, w naszym przypadku nie potrzebne
 - `80`, `443` - admin Panel
 - `443` - DNS over HTTPS
 - `853` - DNS over TLS
