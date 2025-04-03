@@ -19,7 +19,7 @@ Porty dla obu `TCP` i `UDP`, chyba że napisano inaczej.
 - `80`, `443` - admin Panel
 - `443` - DNS over HTTPS
 - `853` - DNS over TLS
-- `784 (tylko udp)`, `853` - DNS over QUIC
+- `443`, `784 (tylko udp)`, `853` - DNS over QUIC
 - `5443` - DNSCrypt
 
 ## Podstawowa konfiguracja instancji
